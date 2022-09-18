@@ -1,125 +1,135 @@
-let canvas, ctx, w, h, particles = [],particles2 = [];
+let canvas,
+  ctx,
+  w,
+  h,
+  particles = [],
+  particles2 = [];
 let mouse = {
-	x: undefined,
-	y: undefined
-}
+  x: undefined,
+  y: undefined,
+};
 let hue = 0;
 var moving = false;
 
 function init() {
-	canvas = document.querySelector("canvas");
-	ctx = canvas.getContext("2d");
-	resizeReset();
-    animate();
+  canvas = document.querySelector('canvas');
+  ctx = canvas.getContext('2d');
+  resizeReset();
+  animate();
 }
 
 function resizeReset() {
-	w = canvas.width = window.innerWidth;
-	h = canvas.height = window.innerHeight;
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
 }
 
 function drawScene() {
-	particles.map((particle) => {
-		particle.update();
-		particle.draw();
-	})
-    particles2.map((particle) => {
-		particle.update();
-		particle.draw();
-	})
+  particles.map((particle) => {
+    particle.update();
+    particle.draw();
+  });
+  particles2.map((particle) => {
+    particle.update();
+    particle.draw();
+  });
 }
 
-function arrayCleanup(){
-    particles = particles.filter((particle)=>{
-        return particle.r>0
-    })
-    particles2 = particles2.filter((particle)=>{
-        return particle.r>0
-    })
+function arrayCleanup() {
+  particles = particles.filter((particle) => {
+    return particle.r > 0;
+  });
+  particles2 = particles2.filter((particle) => {
+    return particle.r > 0;
+  });
 }
 
-class Particle{
-    constructor(x,y,r,color){
-        this.x=x;
-        this.y=y;
-        this.r=r;
-        this.hue = hue % 360;
-        this.alpha=1
-        this.hue
-        this.time=0.1;
-		this.color=color
-    }
+class Particle {
+  constructor(x, y, r, color) {
+    this.x = x;
+    this.y = y;
+    this.r = r;
+    this.hue = hue % 360;
+    this.alpha = 1;
+    this.hue;
+    this.time = 0.1;
+    this.color = color;
+  }
 
-    draw(){
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
-        // ctx.strokeStyle = `hsla(${this.hue}, 100%, 50%, ${this.alpha})`;
-		ctx.strokeStyle = this.color;
-        ctx.stroke();
-    }
-    update(){
-        this.time+=.01;
-        if(this.r>=.1+this.time)
-        this.r-=.1+this.time;
-		else
-		this.r=0;
-    }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+    // ctx.strokeStyle = `hsla(${this.hue}, 100%, 50%, ${this.alpha})`;
+    ctx.fillStyle = this.color;
+    ctx.fill();
+
+    ctx.stroke();
+    ctx.strokeStyle = this.color;
+  }
+  update() {
+    this.time += 0.01;
+    if (this.r >= 0.1 + this.time) this.r -= 0.1 + this.time;
+    else this.r = 0;
+  }
 }
-class Particle2{
-    constructor(x,y,r,color){
-        this.x=x;
-        this.y=y;
-        this.r=r;
-        this.hue = hue % 360;
-        this.alpha=1
-		this.color=color
-    }
+class Particle2 {
+  constructor(x, y, r, color) {
+    this.x = x;
+    this.y = y;
+    this.r = r;
+    this.hue = hue % 360;
+    this.alpha = 1;
+    this.color = color;
+  }
 
-    draw(){
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
-        // ctx.strokeStyle = `hsla(${this.hue}, 100%, 50%, ${this.alpha})`;
-		ctx.strokeStyle = this.color;
-        ctx.stroke();
-    }
-    update(){
-        if(this.r>=.1)
-        this.r-=.1;
-		else
-		this.r=0;
-    }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
+    // ctx.strokeStyle = `hsla(${this.hue}, 100%, 50%, ${this.alpha})`;
+    ctx.globalAlpha = 0.7;
+    ctx.strokeStyle = this.color;
+    ctx.stroke();
+  }
+  update() {
+    if (this.r >= 0.1) this.r -= 0.1;
+    else this.r = 0;
+  }
 }
-var toogle =true;
-function animate(){
-	if(toogle){
-	var radius = Math.floor(Math.random() * 10);
-	// var color = Math.floor(Math.random()*2)===0?"#7267CB":"#00ddff";
-	var x = Math.floor(Math.random() * w)
-	var y = Math.floor(Math.random() * h)
-	particles2.push(new Particle2(x,y,radius,"#eee"));
-	toogle=false;
-	}else toogle = true;
-	
-	if(mouse.x!=undefined && mouse.y!=undefined && moving){
-		var radius = Math.floor(Math.random() * 20);
-		var color = Math.floor(Math.random()*2)===0?"#7267CB":"#00ddff";
-        particles.push(new Particle(mouse.x,mouse.y,radius,color));
-    }
+var toogle = true;
+function animate() {
+  if (toogle) {
+    var radius = Math.floor(Math.random() * 10);
+    // var color = Math.floor(Math.random()*2)===0?"#7267CB":"#00ddff";
+    var x = Math.floor(Math.random() * w);
+    var y = Math.floor(Math.random() * h);
+    particles2.push(new Particle2(x, y, radius, '#eee'));
+    toogle = false;
+  } else toogle = true;
 
-    ctx.clearRect(0, 0, w, h);
-	ctx.globalCompositeOperation='destination-over';
-    moving = false;
-    drawScene();
-    arrayCleanup();
-    requestAnimationFrame(animate);
+  if (mouse.x != undefined && mouse.y != undefined && moving) {
+    var radius = Math.floor(Math.random() * 20);
+    var color =
+      Math.floor(Math.random() * 2) === 0
+        ? '#7267CB'
+        : Math.floor(Math.random() * 2) === 0
+        ? '#0135b799'
+        : '#00ddff';
+    particles.push(new Particle(mouse.x, mouse.y, radius, color));
+  }
+
+  ctx.clearRect(0, 0, w, h);
+  ctx.globalCompositeOperation = 'destination-over';
+  moving = false;
+  drawScene();
+  arrayCleanup();
+  requestAnimationFrame(animate);
 }
 
-window.addEventListener("DOMContentLoaded", init);
-window.addEventListener('mousemove',(e) => {
-    mouse.x = e.x;
-    mouse.y = e.y;
-    moving = true;
-})
+window.addEventListener('DOMContentLoaded', init);
+window.addEventListener('mousemove', (e) => {
+  mouse.x = e.x;
+  mouse.y = e.y;
+  moving = true;
+});
 
 // let canvas, ctx, w, h, particles = [];
 // let mouse = {
@@ -158,7 +168,7 @@ window.addEventListener('mousemove',(e) => {
 // 		hue += 10;
 // 		particles.push(new Particle(mouse.x, mouse.y));
 // 	}
-	
+
 // 	ctx.clearRect(0, 0, w, h);
 // 	ctx.globalCompositeOperation = 'lighter';
 //     moving = false;
@@ -240,6 +250,6 @@ window.addEventListener('mousemove',(e) => {
 // }
 
 // window.addEventListener("DOMContentLoaded", init);
-window.addEventListener("resize", resizeReset);
+window.addEventListener('resize', resizeReset);
 // window.addEventListener("mousemove", mousemove);
 // window.addEventListener("mouseout", mouseout);

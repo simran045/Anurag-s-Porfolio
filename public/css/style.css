@@ -19,27 +19,28 @@ main{
     font-size: 4rem;
     color: transparent;
     background:linear-gradient(to right,#7267CB,#67cbb0);
+    text-shadow: .3rem .3rem rgba(1, 53, 183, 0.599);
     -webkit-background-clip: text;
 }
 .header-section{
     z-index: 1;
     position: relative;
     min-height: 700px;
-    /* background-color: #151515; */
+    /* background-color: #151515; ,*/
     overflow: hidden;
-    background-image: linear-gradient(to bottom,#141426,#151515);
+    background-image:linear-gradient(to bottom,#141426,#151515);
 }
 .taskbar{
     /* color: rgba(231, 231, 231, 0.121); */
     min-height: 8%;
     position: fixed;
-    bottom: 0;
-    width: 100%;
+    bottom: 20px;
     background: #81acd10f;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    align-self: flex-end;
+    border-radius: 20px;
+    align-self: center;
 }
 .container{
     padding: 5rem;
@@ -238,7 +239,7 @@ main{
     padding: 2rem;
     margin: 1rem;
 }
-.project-info::after{
+/* .project-info::after{
     transition: all .3s ease-in-out;
     content: "";
     position: absolute;
@@ -251,7 +252,7 @@ main{
     left: 10px;
     opacity: .5;
     z-index: -1;
-}
+} */
 canvas {
 	position: fixed;
     pointer-events: none;
@@ -263,7 +264,7 @@ canvas {
     height: 100%;
     opacity: .7;
 }
-.project-info::before{
+ /* .project-info::before{
     transition: all .3s ease-in-out;
     content: "";
     position: absolute;
@@ -276,7 +277,8 @@ canvas {
     right: 10px;
     opacity: .5;
     z-index: -1;
-}
+} */
+/*
 .project-info:hover::after{
     top: -15px;
     left: 15px;
@@ -292,7 +294,7 @@ canvas {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-}
+} */
 .project-img{
     position: relative;
 }
@@ -326,9 +328,16 @@ canvas {
     margin: .5rem;
 }
 .date-time{
-    position: fixed;
-    bottom: 20px;
-    right: 10px;
+    width: 150px;
+    height: 150px;
+    /* background: #81acd10f;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 20px; */
+}
+.day{
+    font-size: 3rem;
 }
 .group{
     margin: 1rem;
@@ -380,9 +389,9 @@ canvas {
     .follow-me{
         right: 10px;
     }
-    .date-time{
+    /* .date-time{
         display: none;
-    }
+    } */
 }
 #id1{
     animation: blink1 2s infinite 0s;
@@ -472,6 +481,7 @@ canvas {
 		background-position: 0% 50%;
 	}
 }
+
 
 
 
