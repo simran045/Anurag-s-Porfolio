@@ -131,6 +131,54 @@ window.addEventListener('mousemove', (e) => {
   moving = true;
 });
 
+//audio
+
+const playlist = ['end', 'vision', 'dreams'];
+
+const audio = new Audio();
+var current = Math.floor(Math.random() * 3);
+console.log(current);
+audio.src = `/${playlist[current]}.mp3`;
+var playing = false;
+var viz = undefined;
+var container = document.querySelector('.visualizer');
+var playBtn = document.querySelector('.play-btn');
+audio.loop = true;
+
+function next() {
+  if (current === 2) {
+    current = 0;
+  } else {
+    current++;
+  }
+}
+
+playBtn.addEventListener('click', () => {
+  if (!viz) {
+    viz = new PowerAudio.Viz({
+      container: '.visualizer',
+      source: audio,
+    });
+  }
+  if (!playing) {
+    container.style.display = 'block';
+    playBtn.innerHTML = 'Pause';
+    playing = true;
+    audio.play();
+    viz.flip();
+  } else {
+    playBtn.innerHTML = 'Play';
+    playing = false;
+    container.style.display = 'none';
+    audio.pause();
+  }
+});
+
+audio.addEventListener('ended', () => {
+  next();
+  audio.src = `/${playlist[current]}.mp3`;
+});
+
 // let canvas, ctx, w, h, particles = [];
 // let mouse = {
 // 	x: undefined,

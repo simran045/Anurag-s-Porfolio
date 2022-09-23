@@ -30,6 +30,10 @@ main{
     overflow: hidden;
     background-image:linear-gradient(to bottom,#141426,#151515);
 }
+.section{
+    z-index: 0;
+    position: relative;
+}
 .taskbar{
     /* color: rgba(231, 231, 231, 0.121); */
     min-height: 8%;
@@ -263,6 +267,21 @@ canvas {
     width: 100%;
     height: 100%;
     opacity: .7;
+    z-index: 10;
+
+}
+.visualizer {
+	position: fixed;
+    pointer-events: none;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    opacity: .3;
+    
 }
  /* .project-info::before{
     transition: all .3s ease-in-out;
@@ -328,8 +347,7 @@ canvas {
     margin: .5rem;
 }
 .date-time{
-    width: 150px;
-    height: 150px;
+    flex-direction: column;
     /* background: #81acd10f;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
@@ -338,6 +356,10 @@ canvas {
 }
 .day{
     font-size: 3rem;
+    display:block;
+}
+.month{
+    display: block;
 }
 .group{
     margin: 1rem;
@@ -368,6 +390,14 @@ canvas {
     left: 0;
     right: 0;
     background-color: #151515;
+}
+.play-btn{
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
 }
 @media screen and (max-width: 800px){
     html,body{
