@@ -143,7 +143,6 @@ var playing = false;
 var viz = undefined;
 var container = document.querySelector('.visualizer');
 var playBtn = document.querySelector('.play-btn');
-audio.loop = true;
 
 function next() {
   if (current === 2) {
@@ -177,6 +176,7 @@ playBtn.addEventListener('click', () => {
 audio.addEventListener('ended', () => {
   next();
   audio.src = `/${playlist[current]}.mp3`;
+  audio.play();
 });
 
 // let canvas, ctx, w, h, particles = [];
