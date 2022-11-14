@@ -99,7 +99,7 @@ class Particle2 {
 var toogle = true;
 function animate() {
   if (toogle) {
-    var radius = Math.floor(Math.random() * 3);
+    var radius = Math.floor(Math.random() * 6);
     // var color = Math.floor(Math.random()*2)===0?"#7267CB":"#00ddff";
     var x = Math.floor(Math.random() * w);
     var y = Math.floor(Math.random() * h);

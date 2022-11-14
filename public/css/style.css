@@ -6,24 +6,25 @@
     /* font-family: 'poppins',sans-serif; */
     color: #E4F9F5; 
 }
-html,body,main{
+html,body{
     height: 100%;
-    background-image:linear-gradient(to right,#0c0c0e93,#1c1313d2),url("/img/space.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-image:linear-gradient(to right,rgb(10, 8, 32),rgb(20, 3, 48));
 }
 main{
     /* background-color:#151515; */
     padding-bottom: 2rem;
     position: relative;
+    /* background-image:linear-gradient(to right,#0c0c0e93,#1c1313d2),url("/img/space.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
     /* overflow:hidden; */
 }
 .f-w{
     color: transparent;
     /* background:linear-gradient(to right,#7267CB,#67cbb0); */
-    background:linear-gradient(to right,rgb(236, 254, 255),rgb(103, 103, 103));
+    background:linear-gradient(to right,rgb(255, 255, 255),rgb(142, 142, 142));
     -webkit-background-clip: text;
 }
 .welcome{
@@ -417,7 +418,7 @@ canvas {
 @media screen and (max-width: 800px){
     html,body{
         font-size: 60%;
-         background-color: #151515;
+        background-color: #151515;
     }
     .container{
         grid-template-columns: 1fr;
