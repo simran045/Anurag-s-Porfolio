@@ -8,10 +8,19 @@
 }
 html,body{
     height: 100%;
-    background-image:linear-gradient(to right,rgb(10, 8, 32),rgb(20, 3, 48));
+   
+    /* background-image:linear-gradient(to left,#211e31,#13111C); */
 }
 main{
     /* background-color:#151515; */
+ /* background-color:#211e31; */
+        background-image:linear-gradient(to left,#211e31,#13111C);
+    /* background-image: linear-gradient(white 1px, transparent 1px),
+    linear-gradient(90deg, white 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,.3) .5px, transparent .5px),
+    linear-gradient(90deg, rgba(255,255,255,.3) .5px, transparent .5px);
+    background-size: 200px 200px, 200px 200px, 40px 40px, 40px 40px;
+    background-position:-4px -4px, -4px -4px, -2px -2px, -2px -2px;  */
     padding-bottom: 2rem;
     position: relative;
     /* background-image:linear-gradient(to right,#0c0c0e93,#1c1313d2),url("/img/space.jpeg");
