@@ -8,9 +8,13 @@
 }
 html,body,main{
     height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image:linear-gradient(to bottom,#09090dc3,#15151582),url("/img/space.jpeg");
 }
 main{
-    background-color:#151515;
+    /* background-color:#151515; */
     padding-bottom: 2rem;
     position: relative;
     /* overflow:hidden; */
@@ -19,7 +23,8 @@ main{
     font-size: 4rem;
     color: transparent;
     background:linear-gradient(to right,#7267CB,#67cbb0);
-    text-shadow: .3rem .3rem rgba(1, 53, 183, 0.599);
+    text-shadow: .3rem .3rem #3f31a79e;
+
     -webkit-background-clip: text;
 }
 .header-section{
@@ -28,7 +33,7 @@ main{
     min-height: 700px;
     /* background-color: #151515; ,*/
     overflow: hidden;
-    background-image:linear-gradient(to bottom,#141426,#151515);
+    
 }
 .section{
     z-index: 0;
@@ -204,7 +209,7 @@ main{
     background-color: whitesmoke;
 }
 .about-section,.skill-section,.footer,.projects,.contact-section{
-    background-color: #151515;
+    /* background-color: #151515; */
 }
 .skill-section .col:first-child{
     display: flex;

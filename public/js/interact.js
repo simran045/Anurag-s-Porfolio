@@ -85,8 +85,10 @@ class Particle2 {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI);
     // ctx.strokeStyle = `hsla(${this.hue}, 100%, 50%, ${this.alpha})`;
-    ctx.globalAlpha = 0.7;
+
     ctx.strokeStyle = this.color;
+    ctx.fillStyle = this.color;
+    ctx.fill();
     ctx.stroke();
   }
   update() {
@@ -97,11 +99,11 @@ class Particle2 {
 var toogle = true;
 function animate() {
   if (toogle) {
-    var radius = Math.floor(Math.random() * 10);
+    var radius = Math.floor(Math.random() * 3);
     // var color = Math.floor(Math.random()*2)===0?"#7267CB":"#00ddff";
     var x = Math.floor(Math.random() * w);
     var y = Math.floor(Math.random() * h);
-    particles2.push(new Particle2(x, y, radius, '#eee'));
+    particles2.push(new Particle2(x, y, radius, '#fff'));
     toogle = false;
   } else toogle = true;
 
@@ -112,7 +114,9 @@ function animate() {
         ? '#7267CB'
         : Math.floor(Math.random() * 2) === 0
         ? '#0135b799'
-        : '#00ddff';
+        : Math.floor(Math.random() * 2) === 0
+        ? '#0135b799'
+        : '#fff';
     particles.push(new Particle(mouse.x, mouse.y, radius, color));
   }
 
