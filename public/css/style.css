@@ -8,11 +8,11 @@
 }
 html,body,main{
     height: 100%;
+    background-image:linear-gradient(to right,#0c0c0e93,#1c1313d2),url("/img/space.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-image:linear-gradient(to right,#0c0c0e93,#1c1313d2),url("/img/space.jpeg");
 }
 main{
     /* background-color:#151515; */
@@ -147,12 +147,13 @@ main{
     bottom: 0;
     width: 20px;
     right: 50px;
+   
 }
 .hr{
     width: 2px;
     height: 150px;
     margin-top: 10rem;
-    background-color: white;
+    background-color:rgb(113, 112, 112);
 }
 .nav-bar{
     transition: all 1s ease-in-out;
@@ -172,6 +173,7 @@ main{
 }
 .content>p{
     transform: rotate(90deg);
+    color: rgb(113, 112, 112);
 }
 .list{
     display: grid;
@@ -415,6 +417,7 @@ canvas {
 @media screen and (max-width: 800px){
     html,body{
         font-size: 60%;
+         background-color: #151515;
     }
     .container{
         grid-template-columns: 1fr;
