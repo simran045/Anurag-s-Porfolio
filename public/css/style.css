@@ -10,8 +10,9 @@ html,body,main{
     height: 100%;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     background-attachment: fixed;
-    background-image:linear-gradient(to bottom,#101012d7,#1515158d),url("/img/space.jpeg");
+    background-image:linear-gradient(to right,#0c0c0e93,#1c1313d2),url("/img/space.jpeg");
 }
 main{
     /* background-color:#151515; */
@@ -19,10 +20,17 @@ main{
     position: relative;
     /* overflow:hidden; */
 }
+.f-w{
+    color: transparent;
+    /* background:linear-gradient(to right,#7267CB,#67cbb0); */
+    background:linear-gradient(to right,rgb(236, 254, 255),rgb(103, 103, 103));
+    -webkit-background-clip: text;
+}
 .welcome{
     font-size: 4rem;
     color: transparent;
-    background:linear-gradient(to right,#7267CB,#67cbb0);
+    /* background:linear-gradient(to right,#7267CB,#67cbb0); */
+    background:linear-gradient(to right,#4fb1b8,#224545);
     text-shadow: .3rem .3rem #3f31a79e;
 
     -webkit-background-clip: text;
