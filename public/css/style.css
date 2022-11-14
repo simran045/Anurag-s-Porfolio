@@ -11,7 +11,7 @@ html,body,main{
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    background-image:linear-gradient(to bottom,#09090dc3,#15151582),url("/img/space.jpeg");
+    background-image:linear-gradient(to bottom,#101012d7,#1515158d),url("/img/space.jpeg");
 }
 main{
     /* background-color:#151515; */

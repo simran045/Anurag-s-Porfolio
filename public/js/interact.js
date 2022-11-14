@@ -113,10 +113,10 @@ function animate() {
       Math.floor(Math.random() * 2) === 0
         ? '#7267CB'
         : Math.floor(Math.random() * 2) === 0
-        ? '#0135b799'
+        ? '#fff'
         : Math.floor(Math.random() * 2) === 0
         ? '#0135b799'
-        : '#fff';
+        : '#67cbb0';
     particles.push(new Particle(mouse.x, mouse.y, radius, color));
   }
 
