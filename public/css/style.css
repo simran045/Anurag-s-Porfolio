@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Silkscreen', cursive;
+    /* font-family: 'Raleway',sans-serif; */
     /* font-family: 'poppins',sans-serif; */
     color: #E4F9F5; 
 }
@@ -14,7 +15,7 @@ html,body{
 main{
     /* background-color:#151515; */
  /* background-color:#211e31; */
-        background-image:linear-gradient(to left,#211e31,#13111C);
+        background-image:linear-gradient(to left,#211e31ce,#13111cc7),url("/img/space.webp");
     /* background-image: linear-gradient(white 1px, transparent 1px),
     linear-gradient(90deg, white 1px, transparent 1px),
     linear-gradient(rgba(255,255,255,.3) .5px, transparent .5px),
@@ -24,10 +25,10 @@ main{
     padding-bottom: 2rem;
     position: relative;
     /* background-image:linear-gradient(to right,#0c0c0e93,#1c1313d2),url("/img/space.jpeg");
-    background-size: cover;
+    background-size: cover; */
     background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; */
+    /* background-repeat: no-repeat; */
+    background-attachment: fixed;
     /* overflow:hidden; */
 }
 .f-w{
@@ -39,10 +40,9 @@ main{
 .welcome{
     font-size: 4rem;
     color: transparent;
-    /* background:linear-gradient(to right,#7267CB,#67cbb0); */
-    background:linear-gradient(to right,#4fb1b8,#224545);
+    background:linear-gradient(to right,#afb1ff,#575c8f);
+    /* background:linear-gradient(to right,#4fb1b8,#224545); */
     text-shadow: .3rem .3rem #3f31a79e;
-
     -webkit-background-clip: text;
 }
 .header-section{
@@ -163,7 +163,7 @@ main{
     width: 2px;
     height: 150px;
     margin-top: 10rem;
-    background-color:rgb(113, 112, 112);
+    background-color:rgb(209, 209, 209);
 }
 .nav-bar{
     transition: all 1s ease-in-out;
@@ -177,13 +177,13 @@ main{
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);    position:fixed;
     left: 50%;
-    bottom: 80px;
+    bottom: 120px;
     transform: translate(-50%,0);
     border-radius: 20px;
 }
 .content>p{
     transform: rotate(90deg);
-    color: rgb(113, 112, 112);
+    color: rgb(209, 209, 209);
 }
 .list{
     display: grid;
