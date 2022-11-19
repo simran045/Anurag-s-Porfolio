@@ -5,15 +5,16 @@ var body = document.querySelector('body');
 
 logo.addEventListener('click', onLogoClick);
 document.addEventListener('mousemove', parallax);
-function parallax(event) {
-  this.querySelectorAll('.mouse').forEach((shift) => {
-    const position = shift.getAttribute('value');
-    const x = (window.innerWidth - event.pageX * position) / 90;
-    const y = (window.innerHeight - event.pageY * position) / 90;
+function parallax(e) {
+  document.querySelectorAll('.object').forEach(function (move) {
+    var moving_value = move.getAttribute('data-value');
+    var x = (e.clientX + moving_value) / 250;
+    var y = (e.clientY + moving_value) / 250;
 
-    shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    move.style.transform = 'translateX(' + x + 'px) translateY(' + y + 'px)';
   });
 }
+
 function onLogoClick() {
   if (!navbarOpen) {
     navbar.style.display = 'block';

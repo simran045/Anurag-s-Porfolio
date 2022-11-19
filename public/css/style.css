@@ -13,6 +13,7 @@ html,body{
     /* background-image:linear-gradient(to left,#211e31,#13111C); */
 }
 main{
+    overflow: hidden;
     /* background-color:#151515; */
  /* background-color:#211e31; */
         background-image:linear-gradient(to left,#211e31ce,#13111cc7),url("/img/space.webp");
@@ -149,6 +150,7 @@ main{
     top: 55%;
     left: 80%;
     transform: translate(-50%,-50%);
+ 
     z-index: -1;
     opacity: .5;
 }
@@ -180,6 +182,14 @@ main{
     bottom: 120px;
     transform: translate(-50%,0);
     border-radius: 20px;
+}
+.rocket{
+    height: 150px;
+    width: 150px;
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    left: -120px;
 }
 .content>p{
     transform: rotate(90deg);
