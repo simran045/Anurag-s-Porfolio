@@ -1,10 +1,19 @@
+@font-face {
+    font-family: starjedi;
+    src: url('/fonts/STJEDISE.TTF');
+}
+@font-face {
+    font-family: col;
+    src: url('/fonts/mont.otf');
+}
 *,*::after,*::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Silkscreen', cursive;
-    /* font-family: 'Raleway',sans-serif; */
+    /* font-family: 'Silkscreen', cursive; */
+    font-family: 'col',sans-serif;
     /* font-family: 'poppins',sans-serif; */
+    font-size: 1.05rem;
     color: #E4F9F5; 
 }
 html,body{
@@ -16,7 +25,7 @@ main{
     overflow: hidden;
     /* background-color:#151515; */
  /* background-color:#211e31; */
-        background-image:linear-gradient(to left,#211e31ce,#13111cc7),url("/img/space.webp");
+        /* background-image:linear-gradient(to left,#211e31ce,#13111cc7),url("/img/space.webp"); */
     /* background-image: linear-gradient(white 1px, transparent 1px),
     linear-gradient(90deg, white 1px, transparent 1px),
     linear-gradient(rgba(255,255,255,.3) .5px, transparent .5px),
@@ -26,10 +35,8 @@ main{
     padding-bottom: 2rem;
     position: relative;
     /* background-image:linear-gradient(to right,#0c0c0e93,#1c1313d2),url("/img/space.jpeg");
-    background-size: cover; */
-    background-position: center;
-    /* background-repeat: no-repeat; */
-    background-attachment: fixed;
+    */ 
+   background-color: #0B0704;
     /* overflow:hidden; */
 }
 .f-w{
@@ -41,6 +48,7 @@ main{
 .welcome{
     font-size: 4rem;
     color: transparent;
+    font-family: starjedi,sans-serif;
     background:linear-gradient(to right,#afb1ff,#575c8f);
     /* background:linear-gradient(to right,#4fb1b8,#224545); */
     text-shadow: .3rem .3rem #3f31a79e;
@@ -49,10 +57,28 @@ main{
 .header-section{
     z-index: 1;
     position: relative;
-    min-height: 700px;
+    min-height: 100vh;
     /* background-color: #151515; ,*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image:linear-gradient(to bottom,#432d615c,#13111c),url("/img/mountain.jpg");
     overflow: hidden;
     
+}
+.header-section::after{
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: inherit;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 100;
+    background-position: center;
+    background-image:url("/img/m.png");
 }
 .section{
     z-index: 0;
@@ -121,6 +147,9 @@ main{
     right: 20px;
     z-index: -1;
 }
+#home{
+    padding-top: 20px;
+}
 .img:hover::after{
     top: -25px;
     left: 25px;
@@ -138,19 +167,45 @@ main{
     justify-content: center;
     align-items: center;
 }
+#vd{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    opacity: .5;
+    right: 0;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    mix-blend-mode: screen;
+    background-image: url("/img/light.gif");
+}
+#vd1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    mix-blend-mode: screen;
+    background-image: url("/img/storm.gif");
+}
 .logo{
     margin: .5rem;
-    background-color: rgba(37, 52, 75, 0.896);
+    background-color: #575c8f;
     border-radius: 10px;
     padding: .5rem;
     cursor: pointer;
 }
 .logo-back{
     position: absolute;
-    top: 55%;
-    left: 80%;
+    top: 50%;
+    left: 78%;
+    display: none;
     transform: translate(-50%,-50%);
- 
     z-index: -1;
     opacity: .5;
 }
@@ -159,6 +214,7 @@ main{
     bottom: 0;
     width: 20px;
     right: 50px;
+    z-index: 1000000;
    
 }
 .hr{
@@ -172,6 +228,7 @@ main{
     height: 500px;
     display: none;
     width: 500px;
+    z-index: 1000000;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -179,7 +236,7 @@ main{
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);    position:fixed;
     left: 50%;
-    bottom: 120px;
+    bottom: 90px;
     transform: translate(-50%,0);
     border-radius: 20px;
 }
