@@ -36,13 +36,13 @@ main{
     position: relative;
     /* background-image:linear-gradient(to right,#0c0c0e93,#1c1313d2),url("/img/space.jpeg");
     */ 
-   background-color: #0B0704;
+   background-color: #0C0805;
     /* overflow:hidden; */
 }
 .f-w{
     color: transparent;
     /* background:linear-gradient(to right,#7267CB,#67cbb0); */
-    background:linear-gradient(to right,rgb(255, 255, 255),rgb(142, 142, 142));
+    background:linear-gradient(to right,rgb(255, 255, 255),rgb(208, 208, 208));
     -webkit-background-clip: text;
 }
 .welcome{
@@ -62,7 +62,7 @@ main{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image:linear-gradient(to bottom,#432d615c,#13111c),url("/img/mountain.jpg");
+    background-image:linear-gradient(to bottom,#432d615c,#0C0805),url("/img/mountain.jpg");
     overflow: hidden;
     
 }
@@ -70,6 +70,7 @@ main{
     content: "";
     top: 0;
     bottom: 0;
+    pointer-events: none;
     left: 0;
     right: 0;
     height: inherit;
@@ -80,6 +81,7 @@ main{
     background-position: center;
     background-image:url("/img/m.png");
 }
+
 .section{
     z-index: 0;
     position: relative;
@@ -172,13 +174,12 @@ main{
     top: 0;
     left: 0;
     bottom: 0;
-    opacity: .5;
     right: 0;
     height: 100vh;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100%;
     mix-blend-mode: screen;
-    background-image: url("/img/light.gif");
+    /* background-image: url("/img/snow.gif"); */
 }
 #vd1{
     position: absolute;
@@ -349,6 +350,13 @@ main{
     opacity: .5;
     z-index: -1;
 } */
+#info{
+    pointer-events: auto;
+}
+.header-section:hover::after{
+    z-index: -1;
+}
+
 canvas {
 	position: fixed;
     pointer-events: none;
